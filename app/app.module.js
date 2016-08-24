@@ -7,7 +7,6 @@
 			'ngRoute',
 			//Custom modules
 			'app.topNav',
-			'app.user',
 			'app.header',
 			'app.weatherAlert',
 			'app.current',
