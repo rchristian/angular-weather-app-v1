@@ -15,6 +15,7 @@
 		};
 	}
 
+	
 	function appHeaderCtrl() {
 		var vm = this;
 	}

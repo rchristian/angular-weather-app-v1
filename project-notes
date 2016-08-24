@@ -1,10 +1,5 @@
 General:
 
-	remove top nav bar
-	remove corresponding scripts from index
-	
-	check bottom nav - is it tabbed? if not use tabs?
-
 	Local (user location) Weather
 	F <-> C (in header?)
 	5 columns for five day
@@ -32,14 +27,14 @@ Javascript:
 
 
 
-	use yahoo!weather? no API needed
+	
 
 
 
 	apiid = f72650c40fef189a346723016e3b5ca6;
 
 	JSON call for useR location
-	http://ip.pycox.com/json
+	http://ip-api.com/json
 
 
 	url + ?q= + location + &appid= + apiid + tempUnits + callback
@@ -48,11 +43,12 @@ Javascript:
 	JSONP callback = &callback=test
 
 
-	//switch statement for icons?
+	check sunrise/sunset and set day/night
+	bind to icon
 
 
 	CURRENT
-	URL = api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f72650c40fef189a346723016e3b5ca6
+	URL = api.openweathermap.org/data/2.5/weather?
 
 	5 DAY
 	URL = api.openweathermap.org/data/2.5/forecast;
