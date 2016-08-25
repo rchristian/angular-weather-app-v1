@@ -9,7 +9,6 @@
 			'app.topNav',
 			'app.header',
 			'app.current',
-			'app.bottomNav'
 		])
 		.config(configFunction);
 
