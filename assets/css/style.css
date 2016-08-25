@@ -78,12 +78,6 @@ span {
 	margin-top: 25px;
 }
 
-.weather-current .current-temp .fer-celc {
-	font-size: 40px;
-	vertical-align: super;
-	top: -35px;
-}
-
 .weather-day .windHumid {
 	font-size: 50px;
 }

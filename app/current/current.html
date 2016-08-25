@@ -1,10 +1,10 @@
 <div class="container">
 	<div class="weather-current text-center row">
 		<div class="weather-icons col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<p><i class="wi wi-night-clear"></i></p>
+			<p><i class="wi wi-owm-{{vm.dayNight.time}}-{{vm.icon}}"></i></p>
 		</div>
 		<div class="current-temp col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<p>{{54}}&deg;<sup class="fer-celc">F</sup></p>
+			<p>{{vm.temp}}&deg;</p>
 		</div>
 	</div>
 	<!-- hi-low display -->
