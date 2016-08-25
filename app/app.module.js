@@ -8,9 +8,7 @@
 			//Custom modules
 			'app.topNav',
 			'app.header',
-			'app.weatherAlert',
 			'app.current',
-			'app.fiveDay',
 			'app.bottomNav'
 		])
 		.config(configFunction);
