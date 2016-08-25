@@ -53,25 +53,6 @@ body {
 	margin-top: 30px;
 }
 
-/*WEATHER ALERT STYLES*/
-
-.btn {
-	cursor: default;
-}
-
-.weather-alert .btn-warning,
-.weather-alert .btn-warning:hover,
-.weather-alert .btn-warning:focus,
-.weather-alert .btn-warning:active {
-	background-color: #FF5722;
-	border-color: #FF5722;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	font-size: 20px;
-	margin-top: 10px;
-	padding: 12px 21px;
-}
 
 /*CURRENT WEATHER STYLES*/
 
@@ -103,11 +84,6 @@ body {
 	}
 	.weather-current .current-temp {
 		font-size: 100px;
-	}
-	.weather-current .current-temp .fer-celc {
-		font-size: 25px;
-		vertical-align: super;
-		top: -20px;
 	}
 }
 
