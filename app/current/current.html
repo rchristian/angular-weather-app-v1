@@ -10,7 +10,12 @@
 	<!-- hi-low display -->
 	<div class="weather-day text-center row">
 		<div class="windHumid col-xs-12">
-			<p>{{60}}&deg; / {{50}}&deg;</p>
+			<p>{{vm.humid}} 
+				<i class="wi wi-humidity" title="percent humidity"></i>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				{{weather.windSpeed}}
+				<i class="wi wi-wind from-{{vm.windDirect}}-deg" title="wind direction"></i>
+			</p>
 		</div>
 	</div>
 </div>
