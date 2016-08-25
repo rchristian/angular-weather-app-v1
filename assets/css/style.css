@@ -9,8 +9,8 @@ body {
 	background: #2196F3;
 	border: none;
 	color: #FFFFFF;
-	padding-top: 0px;
-	padding-bottom: 0px;
+	padding-top: 0;
+	padding-bottom: 0;
 	line-height: 60px;
 	font-size: 18px;
 }
@@ -43,8 +43,20 @@ body {
 	background: #1976D2;
 }
 
-.navbar-default .changeTemp {
+.changeTemp {
 	cursor: pointer;
+}
+
+span {
+	opacity: 0.40;
+}
+
+.selected {
+	opacity: 0.99;
+}
+
+.unselected {
+	opacity: 0.40;
 }
 
 /* USER LOCATION INFO SYTLES*/

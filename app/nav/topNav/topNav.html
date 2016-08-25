@@ -4,10 +4,10 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#/">FCC Weather App</a>
 			</div><!--end Navbar Header-->
-			<div class="changeTemp pull-right">
-				<span class="far">&deg;F</span>
-				<span class="slash">/</span>
-				<span class="cels">&deg;C</span>
+			<div class="changeTemp pull-right" ng-click="vm.changeTempUnit()">
+				<span ng-class="vm.selectedClass">&deg;F</span>
+				<span>/</span>
+				<span ng-class="vm.unselectedClass">&deg;C</span>
 			</div>
 		</div><!--End Container Fluid-->
 	</nav>
