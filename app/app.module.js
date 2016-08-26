@@ -6,10 +6,10 @@
 			//Angular modules
 			'ngRoute',
 			//Custom modules
-			'app.topNav',
-			'app.header',
-			'app.current',
 			'app.core'
+			'app.current',
+			'app.header',
+			'app.topNav',
 		])
 		.config(configFunction);
 
