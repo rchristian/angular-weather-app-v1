@@ -9,6 +9,7 @@
 			'app.topNav',
 			'app.header',
 			'app.current',
+			'app.core'
 		])
 		.config(configFunction);
 
