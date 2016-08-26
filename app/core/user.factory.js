@@ -2,6 +2,7 @@
 	'use strict';
 
 	angular
+		.module('app.core', [])
 		.factory('userLocationFactory', userLocationFactory);
 
 	userLocationFactory.$inject = ['$http'];
