@@ -5,10 +5,10 @@
 		.module('app.weather')
 		.controller('WeatherController', WeatherController);
 
-	WeatherController.$inject = ['userFactory', 'weatherFactory'];
+	WeatherController.$inject = ['userLocationFactory', 'weatherFactory'];
 
 
-	function CurrentController(userFactory, weatherFactory) {
+	function WeatherController(userLocationFactory, weatherFactory) {
 		/* jshint validthis: true */
 		var vm = this;
 
