@@ -5,8 +5,9 @@
 		.module("app", [
 			//Angular modules
 			'ngRoute',
+			'ngResource',
 			//Custom modules
-			'app.core'
+			'app.core',
 			'app.header',
 			'app.topNav',
 			'app.weather'
