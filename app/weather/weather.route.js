@@ -3,11 +3,11 @@
 
 	angular
 		.module('app.weather')
-		.config(weatherConfig)
+		.config(weatherConfig);
 
 		weatherConfig.$inject = ['$routeProvider'];
 
-		function currentConfig($routeProvider) {
+		function weatherConfig($routeProvider) {
 			$routeProvider.when('/', {
 				templateUrl: 'app/weather/weather.html',
 			});
