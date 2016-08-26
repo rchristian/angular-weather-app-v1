@@ -2,14 +2,14 @@
 	'use strict';
 
 	angular
-		.module('app.current')
-		.config(currentConfig)
+		.module('app.weather')
+		.config(weatherConfig)
 
-		currentConfig.$inject = ['$routeProvider'];
+		weatherConfig.$inject = ['$routeProvider'];
 
 		function currentConfig($routeProvider) {
 			$routeProvider.when('/', {
-				templateUrl: 'app/current/current.html',
+				templateUrl: 'app/weather/weather.html',
 			});
 		}
 })();

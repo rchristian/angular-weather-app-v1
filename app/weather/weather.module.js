@@ -2,5 +2,5 @@
 	'use strict';
 
 	angular
-		.module('app.current', []);
+		.module('app.weather', []);
 })();

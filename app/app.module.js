@@ -7,9 +7,9 @@
 			'ngRoute',
 			//Custom modules
 			'app.core'
-			'app.current',
 			'app.header',
 			'app.topNav',
+			'app.weather'
 		])
 		.config(configFunction);
 

@@ -2,8 +2,8 @@
 	'use strict';
 
 	angular
-		.module('app.current')
-		.controller('CurrentController', CurrentController);
+		.module('app.weather')
+		.controller('WeatherController', WeatherController);
 
 
 	function CurrentController($scope, userData, currentFactory) {
