@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('app.core', [])
+		.module('app.core')
 		.factory('userLocationFactory', userLocationFactory);
 
 	userLocationFactory.$inject = ['$http'];
@@ -12,9 +12,9 @@
 			getUserLocation: getUserLocation
 		};
 
-		function getUserLoc() {
-			return $http.jsonp('http://ipinfo.io/json?callback=JSON_CALLBACK');
-				.then(getUserLocationComplete);
+		function getUserLocation() {
+			return $http.jsonp('http://ipinfo.io/json?callback=JSON_CALLBACK')
+						.then(getUserLocationComplete);
 
 			function getUserLocationComplete(response) {
 				var userLocation = response.data;
