@@ -10,7 +10,6 @@
 	function weatherFactory ($http, userLocationFactory) {
 		return {
 			getWeather: getWeather,
-			getZip: getZip
 		};
 
 		function getZip() {
@@ -18,7 +17,7 @@
 			
 			function fetchZipCountry(data) {
 				var zipCountry = data.zip + ',' + data.countryCode;
-				getWeather(zipCounry);
+				return getWeather(zipCountry);
 			}
 		}
 
