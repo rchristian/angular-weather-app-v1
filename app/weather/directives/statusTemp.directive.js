@@ -28,7 +28,7 @@
 		activate();
 
 		function activate() {
-			return weatherFactory.getWeather(zipCountry).then(function(data) {
+			return weatherFactory.getWeather().then(function(data) {
 					weatherInfo(data);
 				});
 		}
