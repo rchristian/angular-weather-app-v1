@@ -2,19 +2,29 @@
 	'use strict';
 
 	angular
-		.module('app.core', []);
+		.module('app.core')
 		.factory('weatherFactory', weatherFactory);
 
-	weatherFactory.$inject = ['$http'];
+	weatherFactory.$inject = ['$http', 'userLocationFactory'];
 
-	function weatherFactory ($http) {
+	function weatherFactory ($http, userLocationFactory) {
 		return {
-			getWeather: getWeather
+			getWeather: getWeather,
+			getZip: getZip
 		};
+
+		function getZip() {
+			return userLocationFactory.getUserLocation().then(fetchZipCountry);
+			
+			function fetchZipCountry(data) {
+				var zipCountry = data.zip + ',' + data.countryCode;
+				getWeather(zipCounry);
+			}
+		}
 
 		function getWeather(zipCountry) {
 			var URL = 'http://api.openweathermap.org/data/2.5/weather?q=';
-			var API = /*'[API KEY HERE]';*/
+			var API = '&APPID=f72650c40fef189a346723016e3b5ca6';
 			var tempUnits = '&units=imperial';
 			var callback = '&callback=JSON_CALLBACK';
 			return $http.jsonp(URL + zipCountry + API + tempUnits + callback)
