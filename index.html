@@ -20,14 +20,21 @@
 
     <div ng-view></div>
 
+    <status-temp></status-temp>
+
+    <humid-wind></humid-wind>
+
     <!-- third-party js -->
   	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   	<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
-  	<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
+  	<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.js'></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular-route.js"></script>
 
     <!-- main js -->
     <script src="app/app.module.js"></script>
+    <script src="app/core/app.core.js"></script>
+    <script src="app/core/user.factory.js"></script>
+    <script src="app/core/weather.factory.js"></script>
 
     <!-- top nav -->
 
@@ -41,6 +48,9 @@
     <!-- current -->
     <script src="app/weather/weather.module.js"></script>
     <script src="app/weather/weather.route.js"></script>
+    <script src="app/weather/weather.controller.js"></script>
+    <script src="app/weather/directives/humidWind.directive.js"></script>
+    <script src="app/weather/directives/statusTemp.directive.js"></script>
     
   </body>
 </html>
