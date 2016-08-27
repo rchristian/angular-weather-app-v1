@@ -3,7 +3,7 @@
 
 	angular
 		.module('app.header')
-		.directive('appHeader', appHeader)
+		.directive('appHeader', appHeader);
 
 	function appHeader() {
 		return {
@@ -15,7 +15,19 @@
 		};
 	}
 
-	function appHeaderCtrl() {
+	appHeaderCtrl.$inject = ['userLocationFactory'];
+
+	function appHeaderCtrl(userLocationFactory) {
 		var vm = this;
+
+		vm.userLocation;
+
+		activate();
+
+		function activate() {
+			return userLocationFactory.getUserLocation().then(function(userLocation) {
+				vm.userLocation = userLocation;
+			});
+		}
 	}
 })();
