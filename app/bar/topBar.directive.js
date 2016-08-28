@@ -2,26 +2,27 @@
 	'use strict';
 
 	angular
-		.module('app.topNav')
-		.directive('topNav', topNav)
+		.module('app.topBar')
+		.directive('topBar', topBar)
 
-	function topNav() {
+	function topBar() {
 		return {
-			templateUrl: 'app/nav/topNav/topNav.html',
+			templateUrl: 'app/bar/topBar.html',
 			restrict: 'E',
 			scope: {},
-			controller: topNavCtrl,
+			controller: topBarCtrl,
 			controllerAs: 'vm'
 		};
 	}
 
-	function topNavCtrl() {
+	function topBarCtrl() {
 		var vm = this;
 
 		vm.changeTempUnit = changeTempUnit;
 		vm.selectedClass = 'selected';
 		vm.temp;
 		vm.unselectedClass = 'unselected';
+		vm.windSpeed;
 
 		
 		function changeTempUnit() {

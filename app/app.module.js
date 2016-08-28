@@ -8,7 +8,7 @@
 			//Custom modules
 			'app.core',
 			'app.header',
-			'app.topNav',
+			'app.topBar',
 			'app.weather'
 		])
 		.config(configFunction);
