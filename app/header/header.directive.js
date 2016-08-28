@@ -15,19 +15,25 @@
 		};
 	}
 
-	appHeaderCtrl.$inject = ['userLocationFactory'];
+	appHeaderCtrl.$inject = ['weatherFactory'];
 
-	function appHeaderCtrl(userLocationFactory) {
+	function appHeaderCtrl(weatherFactory) {
 		var vm = this;
 
-		vm.userLocation;
+		vm.country;
+		vm.name;
 
 		activate();
 
 		function activate() {
-			return userLocationFactory.getUserLocation().then(function(userLocation) {
-				vm.userLocation = userLocation;
-			});
+			return weatherFactory.getWeather().then(function(data) {
+					nameCountry(data);
+				});
+		}
+
+		function nameCountry(data) {
+			vm.country = data.sys.country;
+			vm.name = data.name;
 		}
 	}
 })();
