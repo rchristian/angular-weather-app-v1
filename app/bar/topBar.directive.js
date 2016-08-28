@@ -10,12 +10,12 @@
 			templateUrl: 'app/bar/topBar.html',
 			restrict: 'E',
 			scope: {},
-			controller: topBarCtrl,
+			controller: TopBarController,
 			controllerAs: 'vm'
 		};
 	}
 
-	function topBarCtrl() {
+	function TopBarController() {
 		var vm = this;
 
 		vm.changeTempUnit = changeTempUnit;
