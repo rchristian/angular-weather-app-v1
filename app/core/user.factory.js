@@ -17,8 +17,7 @@
 						.then(getUserLocationComplete);
 
 			function getUserLocationComplete(response) {
-				var userLocation = response.data;
-				return userLocation;
+				return response.data;
 			}
 		}
 	}	
