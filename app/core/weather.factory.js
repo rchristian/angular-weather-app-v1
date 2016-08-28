@@ -14,10 +14,9 @@
 
 		function getZip() {
 			return userLocationFactory.getUserLocation().then(fetchZipCountry);
-			
+
 			function fetchZipCountry(data) {
-				var zipCountry = data.zip + ',' + data.countryCode;
-				return getWeather(zipCountry);
+				zipCountry = data.zip + ',' + data.countryCode;
 			}
 		}
 
@@ -37,3 +36,17 @@
 		}
 	}
 })();
+
+/*
+
+function activateWeather() {
+	return userLocationFactory.getUserLocation().then(fetchZipCountry);
+
+	function fetchZipCountry(data) {
+		var zipCountry = data.zip + ',' + data.countryCode;
+		weatherFactory.getCurrent(zipCountry).then(function(data) {
+			weatherInfo(data);
+		});
+	}
+}
+*/
