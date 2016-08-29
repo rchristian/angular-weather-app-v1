@@ -27,7 +27,7 @@
 		activate();
 
 		function activate() {
-			return weatherFactory.weather().then(function(data) {
+			return weatherFactory.getWeather().then(function(data) {
 					humidWind(data);
 				});
 		}
