@@ -3,7 +3,7 @@
 
 	angular
 		.module('app.topBar')
-		.directive('topBar', topBar)
+		.directive('topBar', topBar);
 
 	function topBar() {
 		return {
