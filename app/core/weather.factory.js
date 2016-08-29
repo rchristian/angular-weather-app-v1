@@ -13,7 +13,7 @@
 		};
 
 		function getWeather() {
-			return userLocationFactory.getUserLocation().then(fetchWeather);
+			return userLocationFactory.getUserLocation().then(weather);
 
 			function weather(data) {
 				var URL = 'http://api.openweathermap.org/data/2.5/weather?q=';
