@@ -15,9 +15,9 @@
 		};
 	}
 
-	HumidWindController.$inject = ['weatherFactory'];
+	HumidWindController.$inject = ['weatherService'];
 
-	function HumidWindController(weatherFactory) {
+	function HumidWindController(weatherService) {
 		var vm = this;
 
 		vm.humid;
@@ -27,7 +27,7 @@
 		activate();
 
 		function activate() {
-			return weatherFactory.getWeather().then(function(data) {
+			return weatherService.getWeather().then(function(data) {
 					humidWind(data);
 				});
 		}

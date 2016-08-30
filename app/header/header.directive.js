@@ -15,9 +15,9 @@
 		};
 	}
 
-	appHeaderCtrl.$inject = ['weatherFactory'];
+	appHeaderCtrl.$inject = ['weatherService'];
 
-	function appHeaderCtrl(weatherFactory) {
+	function appHeaderCtrl(weatherService) {
 		var vm = this;
 
 		vm.country;
@@ -26,7 +26,7 @@
 		activate();
 
 		function activate() {
-			return weatherFactory.getWeather().then(function(data) {
+			return weatherService.getWeather().then(function(data) {
 					nameCountry(data);
 				});
 		}

@@ -15,9 +15,9 @@
 		};
 	}
 
-	StatusTempController.$inject = ['weatherFactory'];
+	StatusTempController.$inject = ['weatherService'];
 
-	function StatusTempController(weatherFactory) {
+	function StatusTempController(weatherService) {
 		var vm = this;
 
 		vm.dayNight;
@@ -28,7 +28,7 @@
 		activate();
 
 		function activate() {
-			return weatherFactory.getWeather().then(function(data) {
+			return weatherService.getWeather().then(function(data) {
 					weatherInfo(data);
 				});
 		}
@@ -40,7 +40,7 @@
 			vm.dayNight = dayNightSet(sunrise, sunset);
 			vm.desc = data.weather[0].description;
 			vm.icon = data.weather[0].id;
-			vm.temp = Math.round(data.main.temp); //Faren
+			vm.temp = Math.round(data.main.temp); //Fahren
 			
 
 			function dayNightSet(sunrise, sunset) {
