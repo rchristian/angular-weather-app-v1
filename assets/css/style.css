@@ -68,6 +68,10 @@ span {
 
 /*CURRENT WEATHER STYLES*/
 
+.weather-current {
+	padding-top: 25px;
+}
+
 .weather-current .weather-icons {
 	font-size: 180px;
 	margin-top: 25px;
@@ -79,6 +83,7 @@ span {
 }
 
 .weather-day .windHumid {
+	padding-top: 50px;
 	font-size: 50px;
 }
 
