@@ -20,8 +20,8 @@
 	function appHeaderCtrl(weatherService) {
 		var vm = this;
 
+		vm.city;
 		vm.country;
-		vm.name;
 
 		activate();
 
@@ -32,8 +32,8 @@
 		}
 
 		function nameCountry(data) {
+			vm.city = data.name;
 			vm.country = data.sys.country;
-			vm.name = data.name;
 		}
 	}
 })();
