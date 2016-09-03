@@ -3,28 +3,31 @@
 
 	angular
 		.module('app.weather')
-		.directive('statusTemp', statusTemp);
+		.directive('weather', weather);
 
-	function statusTemp() {
+	function weather() {
 		return {
-			templateUrl: 'app/weather/directives/statusTemp.html',
+			templateUrl: 'app/weather/weather.html',
 			restrict: 'E',
 			scope: {},
-			controller: StatusTempController,
+			controller: WeatherController,
 			controllerAs: 'vm'
 		};
 	}
 
-	StatusTempController.$inject = ['weatherService'];
+	WeatherController.$inject = ['weatherService'];
 
-	function StatusTempController(weatherService) {
+	function WeatherController(weatherService) {
 		var vm = this;
 
 		vm.dayNight;
 		vm.desc;
+		vm.humid;
 		vm.icon;
 		vm.temp;
-		
+		vm.windDirect;
+		vm.windSpeed;
+
 		activate();
 
 		function activate() {
@@ -39,8 +42,11 @@
 
 			vm.dayNight = dayNightSet(sunrise, sunset);
 			vm.desc = data.weather[0].description;
+			vm.humid = data.main.humidity;
 			vm.icon = data.weather[0].id;
 			vm.temp = Math.round(data.main.temp); //Fahren
+			vm.windDirect = data.wind.deg;
+			vm.windSpeed = (data.wind.speed).toFixed(1); //MPH
 			
 
 			function dayNightSet(sunrise, sunset) {
