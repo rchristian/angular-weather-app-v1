@@ -82,7 +82,7 @@ span {
 	margin-top: 25px;
 }
 
-.weather-day .windHumid {
+.weather-day .humidWind {
 	padding-top: 50px;
 	font-size: 50px;
 }
@@ -91,15 +91,14 @@ span {
 
 @media only screen and (max-width: 750px) {
 	.weather-current .weather-icons {
-		font-size: 100px;
+		font-size: 115px;
 	}
-	.weather-current .current-temp {
-		font-size: 100px;
-	}
-}
 
-@media (min-width: 768px) {
-	.forecast-type>.forecast>.navbar-nav {
-		float: none;
+	.weather-current .current-temp {
+		font-size: 115px;
+	}
+
+	.weather-day .humidWind {
+		font-size: 40px;
 	}
 }
