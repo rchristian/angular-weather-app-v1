@@ -44,16 +44,11 @@
 			
 
 			function dayNightSet(sunrise, sunset) {
-				var time;
-				var sun = (Date.now() >= sunrise * 1000 && Date.now() <= sunset * 1000);
-				if (sun) {
-					time = 'day';
-				} else {
-					time = 'night';
-				}
-				return {
-					time: time
-				};
+				var time,
+					sun = (Date.now() >= sunrise * 1000 && Date.now() <= sunset * 1000);
+
+				sun ? time='day' : time='night';
+				return time;
 			}
 		}
 	}
