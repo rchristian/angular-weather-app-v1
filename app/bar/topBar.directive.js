@@ -20,21 +20,19 @@
 
 		vm.changeTempUnit = changeTempUnit;
 		vm.farClass = 'selected';
-		vm.temp;
 		vm.celsClass = 'unselected';
-		vm.windSpeed;
 		
 		function changeTempUnit() {
 			if (vm.farClass === "selected") {
 				vm.farClass = 'unselected'; //F unselected
 				vm.celsClass = 'selected'; //C selected
-				vm.temp = Math.round((vm.temp - 32) * 5 / 9); //Celsius
-				vm.windSpeed = (vm.windSpeed * 0.44704).toFixed(1); // M/S
+				//temp = Math.round((vm.temp - 32) * 5 / 9); //Celsius
+				//windSpeed = (vm.windSpeed * 0.44704).toFixed(1); // M/S
 			} else if (vm.celsClass === 'selected') {
 				vm.celsClass = 'unselected'; //C unselected
 				vm.farClass = 'selected'; //F selected
-				vm.temp = Math.round(vm.temp * 1.8 + 32); //Fahren
-				vm.windSpeed = (vm.windSpeed / 0.44704).toFixed(1); //MPH
+				//temp = Math.round(vm.temp * 1.8 + 32); //Fahren
+				//windSpeed = (vm.windSpeed / 0.44704).toFixed(1); //MPH
 			}
 		}
 	}
