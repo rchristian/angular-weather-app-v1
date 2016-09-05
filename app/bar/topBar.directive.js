@@ -10,7 +10,7 @@
 			templateUrl: 'app/bar/topBar.html',
 			restrict: 'E',
 			scope: {},
-			controller: 'TopBarController',
+			controller: TopBarController,
 			controllerAs: 'vm'
 		};
 	}
@@ -26,13 +26,13 @@
 			if (vm.fahrClass === "selected") {
 				vm.fahrClass = 'unselected'; //F unselected
 				vm.celsClass = 'selected'; //C selected
-				//vm.temp = Math.round((vm.temp - 32) * 5 / 9); //Celsius
-				//vm.windSpeed = (vm.windSpeed * 0.44704).toFixed(1); // M/S
+				vm.temp = Math.round((vm.temp - 32) * 5 / 9); //Celsius
+				vm.windSpeed = (vm.windSpeed * 0.44704).toFixed(1); // M/S
 			} else if (vm.celsClass === 'selected') {
 				vm.celsClass = 'unselected'; //C unselected
 				vm.fahrClass = 'selected'; //F selected
-				//vm.temp = Math.round(vm.temp * 1.8 + 32); //Fahren
-				//vm.windSpeed = (vm.windSpeed / 0.44704).toFixed(1); //MPH
+				$rootScope.temp = Math.round(vm.temp * 1.8 + 32); //Fahren
+				vm.windSpeed = (vm.windSpeed / 0.44704).toFixed(1); //MPH
 			}
 		}
 	}
