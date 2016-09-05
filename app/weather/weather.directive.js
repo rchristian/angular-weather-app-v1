@@ -10,7 +10,8 @@
 			templateUrl: 'app/weather/weather.html',
 			restrict: 'E',
 			scope: {},
-			controller: WeatherController,
+			controller: 'WeatherController',
 			controllerAs: 'vm'
 		};
+	}
 })();
