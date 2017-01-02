@@ -1,0 +1,17 @@
+{
+  "name": "local-weather-app",
+  "description": "View the local weather at your location. Convert between imperial and metric units.",
+  "version": "1.1.0",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "~4.14.0",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.79.0",
+    "request-debug": "^0.2.0",
+    "serve-favicon": "^2.3.2"
+  }
+}
