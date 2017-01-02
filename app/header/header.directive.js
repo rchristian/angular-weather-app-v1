@@ -7,7 +7,7 @@
 
 	function appHeader() {
 		return {
-			templateUrl: 'app/header/header.html',
+			templateUrl: 'header/header.html',
 			restrict: 'E',
 			scope: {},
 			controller: appHeaderCtrl,

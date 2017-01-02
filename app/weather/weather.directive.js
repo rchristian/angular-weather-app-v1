@@ -7,7 +7,7 @@
 
 	function weather() {
 		return {
-			templateUrl: 'app/weather/weather.html',
+			templateUrl: 'weather/weather.html',
 			restrict: 'E',
 			scope: {},
 			controller: WeatherController,

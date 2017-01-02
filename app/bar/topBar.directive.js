@@ -7,7 +7,7 @@
 
 	function topBar() {
 		return {
-			templateUrl: 'app/bar/topBar.html',
+			templateUrl: 'topBar.html',
 			restrict: 'E',
 			scope: {},
 			controller: TopBarController,
