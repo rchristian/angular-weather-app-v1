@@ -5,7 +5,7 @@
 		.module('app.core')
 		.factory('weatherService', weatherService);
 
-	weatherService.$inject = ['$http'/*, 'locationService'*/];
+	weatherService.$inject = ['$http'];
 
 	function weatherService ($http) {
 		return {
