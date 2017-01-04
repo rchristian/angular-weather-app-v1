@@ -10,14 +10,14 @@
 			templateUrl: 'header/header.html',
 			restrict: 'E',
 			scope: {},
-			controller: appHeaderCtrl,
+			controller: appHeaderController,
 			controllerAs: 'vm'
 		};
 	}
 
-	appHeaderCtrl.$inject = ['weatherService'];
+	appHeaderController.$inject = ['weatherService'];
 
-	function appHeaderCtrl(weatherService) {
+	function appHeaderController(weatherService) {
 		var vm = this;
 
 		vm.city;
