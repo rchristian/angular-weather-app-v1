@@ -24,24 +24,23 @@ app.use(function(req, res, next) {
     next();
 });
 
-var getLocation = function(req, res, next) {
+function getLocation(req, res, next) {
     var url = "http://ipinfo.io";
 
     request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
         if (err) { return err; }
         if (!err) {
-            res.setHeader("Content-Type", "application/json");
-            req.data
-            return next();
+            res.locals.userLoc = data;
+            req.userLoc = data;
+            next();
         }
     });
-};
+}
 
 app.get("/api/weather/connect", getLocation, function(req, res) {
-    var userLocation = req.data;
-    console.log(userLocation);
+    var userLocation = req.userLoc;
 
-    var zipCountry = "37187" + "," + "US";
+    var zipCountry = userLocation.body.postal + "," + userLocation.body.country;
 
     var url = "http://api.openweathermap.org/data/2.5/weather?q=" + zipCountry + "&APPID=f72650c40fef189a346723016e3b5ca6&units=imperial";
 
