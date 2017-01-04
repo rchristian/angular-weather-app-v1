@@ -31,7 +31,7 @@
 			} else if (vm.celsClass === 'selected') {
 				vm.celsClass = 'unselected'; //C unselected
 				vm.fahrClass = 'selected'; //F selected
-				$rootScope.temp = Math.round(vm.temp * 1.8 + 32); //Fahren
+				vm.temp = Math.round(vm.temp * 1.8 + 32); //Fahren
 				vm.windSpeed = (vm.windSpeed / 0.44704).toFixed(1); //MPH
 			}
 		}
