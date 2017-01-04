@@ -38,9 +38,9 @@ function getLocation(req, res, next) {
 }
 
 app.get("/api/weather/connect", getLocation, function(req, res) {
-    var userLocation = req.userLoc;
+    var userLocation = req.userLoc.body;
 
-    var zipCountry = userLocation.body.postal + "," + userLocation.body.country;
+    var zipCountry = userLocation.postal + "," + userLocation.country;
 
     var url = "http://api.openweathermap.org/data/2.5/weather?q=" + zipCountry + "&APPID=f72650c40fef189a346723016e3b5ca6&units=imperial";
 
