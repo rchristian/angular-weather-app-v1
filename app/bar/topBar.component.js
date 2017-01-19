@@ -23,10 +23,12 @@
 				ctrl.fahrClass = 'unselected'; //F unselected
 				ctrl.celsClass = 'selected'; //C selected
 				conversionService.selectedUnit = conversionService.tempUnits.celsius;
+				conversionService.selectedSpeed = conversionService.speedUnits.ms;
 			} else if (ctrl.celsClass === 'selected') {
 				ctrl.celsClass = 'unselected'; //C unselected
 				ctrl.fahrClass = 'selected'; //F selected
 				conversionService.selectedUnit = conversionService.tempUnits.farhenheit;
+				conversionService.selectedSpeed = conversionService.speedUnits.mph;
 			}
 		}
 	}

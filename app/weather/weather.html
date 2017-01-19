@@ -10,7 +10,7 @@
 			<p>{{$ctrl.humid}} 
 				<i class="wi wi-humidity" title="percent humidity"></i>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				{{$ctrl.windSpeed}}
+				{{$ctrl.conversionService.convertSpeed($ctrl.windSpeed, $ctrl.conversionService.speedUnits.mph)}}
 				<i class="wi wi-wind from-{{$ctrl.windDirect}}-deg" title="wind direction"></i>
 			</p>
 		</div>
