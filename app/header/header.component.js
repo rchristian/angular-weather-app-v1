@@ -3,25 +3,19 @@
 
 	angular
 		.module('app.header')
-		.directive('appHeader', appHeader);
-
-	function appHeader() {
-		return {
+		.component('appHeader', {
 			templateUrl: 'header/header.html',
-			restrict: 'E',
-			scope: {},
 			controller: appHeaderController,
-			controllerAs: 'vm'
-		};
-	}
+			binding: {}
+	});
 
 	appHeaderController.$inject = ['weatherService'];
 
 	function appHeaderController(weatherService) {
-		var vm = this;
+		var ctrl = this;
 
-		vm.city;
-		vm.country;
+		ctrl.city;
+		ctrl.country;
 
 		activate();
 
@@ -32,8 +26,8 @@
 		}
 
 		function nameCountry(data) {
-			vm.city = data.name;
-			vm.country = data.sys.country;
+			ctrl.city = data.name;
+			ctrl.country = data.sys.country;
 		}
 	}
 })();
