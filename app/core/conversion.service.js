@@ -26,5 +26,24 @@
 				throw Error("Invalid unit");
 			}
 		}
+
+		service.speedUnits = {
+			mph: 'mph',
+			ms: 'ms'
+		}
+
+		service.selectedSpeed = 'mph';
+
+		service.convertSpeed = function(speed, speedUnit) {
+			if(service.selectedSpeed === speedUnit) {
+				return speed;
+			} else if (service.selectedSpeed === service.speedUnits.mph) {
+				return (speed / 0.44704).toFixed(0);
+			} else if (service.selectedSpeed === service.speedUnits.ms) {
+				return (speed * 0.44704).toFixed(0);
+			} else {
+				throw Error("Invalid unit");
+			}
+		}
 	}
 })();
