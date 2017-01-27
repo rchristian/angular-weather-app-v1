@@ -34,10 +34,23 @@ app.use(function(req, res, next) {
 });
 
 function getLocation(req, res, next) {
-    var url = "http://ipinfo.io/" + "98.87.28.130/";
+    var ipAddr = req.headers["x-forwarded-for"];
+    var url;
 
-    request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
-        if (err) { return err; }
+    if (ipAddr) {
+        var list = ipAddr.split(",");
+        ipAddr = list[list.length - 1];
+        url = "http://ipinfo.io/" + ipAddr + "/";
+    } else {
+        ipAddr = req.connection.remoteAddress;
+        url = "http://ipinfo.io/" + ipAddr + "/";
+    }
+
+    //var url = "";
+
+    request.get({ url: url, json: true, headers: { "User-Agent": "request" } }, function(err, data) {
+        if (err) {
+            return err; }
         if (!err) {
             res.locals.userLoc = data;
             req.userLoc = data;
@@ -53,9 +66,10 @@ app.get("/api/weather/connect", getLocation, function(req, res) {
 
     var url = "http://api.openweathermap.org/data/2.5/weather?q=" + zipCountry + "&APPID=" + process.env.weatherAPI + "&units=imperial";
 
-    request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
-        if (err) { return err; }
-        if(!err) {
+    request.get({ url: url, json: true, headers: { "User-Agent": "request" } }, function(err, data) {
+        if (err) {
+            return err; }
+        if (!err) {
             res.setHeader("Content-Type", "application/json");
             res.send(data);
         }
