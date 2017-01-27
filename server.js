@@ -46,8 +46,6 @@ function getLocation(req, res, next) {
         url = "http://ipinfo.io/" + ipAddr + "/";
     }
 
-    //var url = "";
-
     request.get({ url: url, json: true, headers: { "User-Agent": "request" } }, function(err, data) {
         if (err) {
             return err; }
