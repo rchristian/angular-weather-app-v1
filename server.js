@@ -43,16 +43,16 @@ function getLocation(req, res, next) {
     } else {
         ipAddr = req.connection.remoteAddress;
         url = "http://ipinfo.io" + ipAddr;
-    }
 
-    request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
-        if (err) { return err; }
-        if (!err) {
-            res.locals.userLoc = data;
-            req.userLoc = data;
-            next();
-        }
-    });
+        request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
+            if (err) { return err; }
+            if (!err) {
+                res.locals.userLoc = data;
+                req.userLoc = data;
+                next();
+            }
+        });
+    }
 }
 
 app.get("/api/weather/connect", getLocation, function(req, res) {
