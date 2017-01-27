@@ -7,15 +7,15 @@ var request = require("request");
 
 var app = express();
 
-var fileName = "./config.json";
-var config;
+// var fileName = "./config.json";
+// var config;
 
-try {
-  config = require(fileName);
-}
-catch (err) {
-    return err;
-}
+// try {
+//   config = require(fileName);
+// }
+// catch (err) {
+//     return err;
+// }
 
 app.use(bodyParser.json());
 
@@ -51,7 +51,7 @@ app.get("/api/weather/connect", getLocation, function(req, res) {
 
     var zipCountry = userLocation.postal + "," + userLocation.country;
 
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + zipCountry + "&APPID=" + config.weatherAPI + "&units=imperial";
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + zipCountry + "&APPID=" + process.env.weatherAPI + "&units=imperial";
 
     request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
         if (err) { return err; }
