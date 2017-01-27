@@ -44,6 +44,8 @@ function getLocation(req, res, next) {
         ipAddr = req.connection.remoteAddress;
         url = "http://ipinfo.io" + ipAddr;
 
+        console.log(url);
+
         request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
             if (err) { return err; }
             if (!err) {
