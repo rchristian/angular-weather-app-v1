@@ -34,7 +34,16 @@ app.use(function(req, res, next) {
 });
 
 function getLocation(req, res, next) {
-    var url = "http://ipinfo.io";
+    var url;
+    var ipAddr = req.headers["x-forwarded-for"];
+
+    if (ipAddr){
+        var list = ipAddr.split(",");
+        ipAddr = list[list.length-1];
+    } else {
+        ipAddr = req.connection.remoteAddress;
+        url = "http://ipinfo.io" + ipAddr;
+    }
 
     request.get({url: url, json: true, headers: {"User-Agent": "request"}}, function(err, data) {
         if (err) { return err; }
