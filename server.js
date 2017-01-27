@@ -38,7 +38,7 @@ function getLocation(req, res, next) {
 
     if (ipAddr) {
         var list = ipAddr.split(",");
-        ipAddr = list[list.length - 1];
+        ipAddr = list[list.length - 1].toString();
 
         var url = "http://ipinfo.io" + ipAddr;
 
