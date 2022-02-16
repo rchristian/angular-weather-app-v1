@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "body-parser": "^1.19.1",
+    "body-parser": "^1.19.2",
     "express": "^4.17.2",
     "morgan": "^1.10.0",
     "request": "^2.88.2",
